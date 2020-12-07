@@ -11,11 +11,11 @@
 - has_many :words
 
 
-## Wordbooksテーブル
+## Wordlistsテーブル
 
 | Column      | Type       | Option      |
 | ----------- | ---------- | ----------- |
-| bookname    | string     | null: false |
+| listname    | string     | null: false |
 | text        | text       | null: false |
 | release_id  | integer    | null: false |※あとで
 | category_id | integer    | null: false |※あとで

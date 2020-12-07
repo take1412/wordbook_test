@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'workbooks/index'
   devise_for :users
-  root to: "workbooks#index"
-  resources :workbooks, only: :index
+  root to: "wordlists#index"
+  resources :wordlists, only: [:index, :new, :create, :show]
 end
