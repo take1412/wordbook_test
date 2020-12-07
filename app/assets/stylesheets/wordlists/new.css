@@ -1,0 +1,16 @@
+.new-lists {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.listname {
+  width: 70vw;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.listtext {
+  width: 70vw;
+  margin-bottom: 10px;
+}

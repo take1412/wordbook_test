@@ -1,0 +1,13 @@
+<div class = "new-lists">
+  <%= form_with(model: @wordlist, local: true) do |form| %>
+    <div class = "lists-name">
+      <%= form.text_field :listname, placeholder: "リストの名前", class: "listname" %>
+    </div>
+    <div class = "lists-text">
+      <%= form.text_area :text, placeholder: "説明文", rows: "4", class: "listtext" %>
+    </div>
+    <div class = "lists-btn">
+      <%= form.submit "リスト作成" %>
+    </div>
+  <% end %>
+</div>

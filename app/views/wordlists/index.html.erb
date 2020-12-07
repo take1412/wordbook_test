@@ -1,0 +1,17 @@
+<div class = "main">
+  <div class = "word-lists">
+    <% @wordlists.each do |wordlist|%>
+      <li class = "lists">
+        <div class = "list-name-content">
+          <%= wordlist.listname%>
+        </div>
+
+        <div class = "list-text-content">
+          <%= wordlist.text%>
+        </div>
+      </li>
+    <% end %>
+  
+  
+  </div>
+</div>

@@ -12,19 +12,36 @@
   <body>
     <header class = "header">
         <div class = "title-contents">
-          <h1><a href="/">単語帳アプリ</a></h1>
-          <p>自分だけの単語帳を登録しよう！</p>
-
+          <div class = "title">
+            <h1><a href="/">単語帳アプリ</a></h1>
+            <p>自分だけの単語帳を登録しよう！</p>
+          </div>
           <div class = "header-user">
-            <ul>
-              <li>
-                <%= link_to "ログアウト", %>
-              </li>
-            </ul>
+            <% if user_signed_in?%>
+              <ul class = "logout">
+                <li>
+                  <%= link_to "新規リスト作成", new_wordlist_path, class: "header-btn" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %>
+                </li>
+              </ul>
+            <% else %>
+              <ul class = "login">
+                <li>
+                  <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
+                  <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
+                </li>
+              </ul>
+            <% end %>
           </div>
         </div>
         
     </header>
     <%= yield %>
+    <footer class = "footer">
+      <div>
+      
+      </div>
+    
+    </footer>
   </body>
 </html>

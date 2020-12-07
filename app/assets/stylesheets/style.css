@@ -1,0 +1,40 @@
+.header {
+  width: 95vw;
+  height: 50px;
+  background-color: skyblue;
+  padding: 50px;
+}
+
+.title-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1 a{
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+.header p {
+  padding-left: 10px;
+}
+
+.header-user {
+  margin-top: 30px;
+}
+
+.header-btn {
+  padding: 20px;
+  border: 2px solid black;
+  background-color: white;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.footer {
+  width: 95vw;
+  height: 50px;
+  background-color: skyblue;
+  padding: 50px;
+}
