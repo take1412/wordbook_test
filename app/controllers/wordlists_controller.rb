@@ -20,6 +20,14 @@ class WordlistsController < ApplicationController
     @wordlist = Wordlist.find(params[:id])
   end
 
+  def edit
+
+  end
+
+  def destroy
+
+  end
+
   private
 
   def wordlist_params

@@ -1,11 +1,17 @@
 .main {
   width: 95vw;
+  padding: 20px;
 }
 
 .word-lists {
   display: flex;
   justify-content: space-around;
   list-style: none;
+}
+
+.listlink {
+  text-decoration: none;
+  color: black;
 }
 
 .list-name-content {
@@ -16,6 +22,7 @@
   height: 40px;
   text-align: center;
   overflow: hidden;
+
 }
 
 .list-text-content {
