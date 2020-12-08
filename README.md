@@ -34,9 +34,9 @@
 | wordname | string     | null: false                    |
 | mean     | text       | null: false                    |
 | user     | references | null: false, foreign_key: true |
-| wordbook | references | null: false, foreign_key: true |
+| wordlist | references | null: false, foreign_key: true |
 
 ## Association
 
 - belongs_to :user
-- belongs_to :wordbook
+- belongs_to :wordlist
