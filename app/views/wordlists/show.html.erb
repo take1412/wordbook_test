@@ -1,0 +1,16 @@
+<div class = "showwrapper">
+  <div class = "list-show">
+    <p>リスト作成者:<%= @wordlist.user.nickname %></p>
+    <h1>リストの名前</h1>
+    <h2 class = "show-listname"><%= @wordlist.listname %></h2>
+    <p class = "show-listtext"><%= @wordlist.text%></p>
+    <% if user_signed_in? && current_user.id == @wordlist.user_id %>
+      <ul class = "show-btn">
+        <li>
+          <%= link_to "リストを編集する", edit_wordlist_path(@wordlist.id), class: "listbtn"%>
+          <%= link_to "リストを削除する", wordlist_path(@wordlist.id), method: :delete, class: "listbtn"%>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>

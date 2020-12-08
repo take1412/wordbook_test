@@ -2,13 +2,15 @@
   <div class = "word-lists">
     <% @wordlists.each do |wordlist|%>
       <li class = "lists">
-        <div class = "list-name-content">
-          <%= wordlist.listname%>
-        </div>
+        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
+          <div class = "list-name-content">
+            <%= wordlist.listname%>
+          </div>
 
-        <div class = "list-text-content">
-          <%= wordlist.text%>
-        </div>
+          <div class = "list-text-content">
+            <%= wordlist.text%>
+          </div>
+        <% end %>
       </li>
     <% end %>
   
