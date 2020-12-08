@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :wordbooks
+  has_many :words
 
   validates :nickname, presence: true
 end
