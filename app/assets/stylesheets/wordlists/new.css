@@ -14,3 +14,8 @@
   width: 70vw;
   margin-bottom: 10px;
 }
+
+.error-message {
+  font-size: 25px;
+  color: red;
+}
