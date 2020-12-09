@@ -20,7 +20,7 @@ class WordlistsController < ApplicationController
   end
 
   def show
-    
+    @words = @wordlist.words.includes(:user)
   end
 
   def edit

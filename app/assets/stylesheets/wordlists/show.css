@@ -32,4 +32,33 @@
   text-decoration: none;
 }
 
+.word-show h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
 
+.word-list {
+  display: flex;
+  justify-content: center;
+}
+
+.word-name {
+  text-align: center;
+  width: 15%;
+  height: 60px;
+  border: 2px solid black;
+  padding: 10px;
+  overflow: scroll;
+  word-break: break-all;
+}
+
+.word-mean {
+  font-size: 13px;
+  width: 40%;
+  height: 60px;
+  border: 2px solid black;
+  padding: 10px;
+  word-break: break-all;
+  overflow: scroll;
+}

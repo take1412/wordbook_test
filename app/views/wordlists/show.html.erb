@@ -11,7 +11,19 @@
           <%= link_to "リストを削除する", wordlist_path(@wordlist.id), method: :delete, class: "listbtn"%>
         </li>
       </ul>
-    <% end %>
     <%= link_to "単語を登録する", new_wordlist_word_path(@wordlist.id) %>
+    <% end %>
+  </div>
+
+  <div class = "word-show">
+    <h1>単語一覧</h1>
+      <% if @words %>
+          <% @words.each do |word| %>
+        <div class = "word-list">
+            <p class = "word-name" ><%= word.wordname%></p>
+            <p class = "word-mean" ><%= word.mean%></p>
+        </div>
+        <% end %>
+      <% end %>
   </div>
 </div>
