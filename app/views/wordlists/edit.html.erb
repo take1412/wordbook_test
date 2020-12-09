@@ -1,5 +1,10 @@
 <div class = "new-lists">
+
   <%= form_with(model: @wordlist, local: true) do |form| %>
+    <%# エラー発生時のメッセージ表示%>
+    <%= render 'error_messages', model: form.object %>
+    <%# //エラー発生時のメッセージ表示%>
+    
     <div class = "lists-name">
       <%= form.text_field :listname, placeholder: "リストの名前", class: "listname" %>
     </div>
