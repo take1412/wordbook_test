@@ -1,5 +1,11 @@
 class WordsController < ApplicationController
 
+  def index
+    @wordlist = Wordlist.find(params[:wordlist_id])
+    @words = @wordlist.words.includes(:user)
+    @words = @wordlist.words.page(params[:page]).per(10)
+  end
+
   def new
     @wordlist = Wordlist.find(params[:wordlist_id])
     @word = Word.new
