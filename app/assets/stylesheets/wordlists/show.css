@@ -23,14 +23,58 @@
 
 .show-listtext {
   
+  
 }
 
-.listbtn {
+.editbtn {
   display: inline-block;
   padding: 20px;
   margin: 50px 0;
   border: 2px solid black;
   text-decoration: none;
+  background-color: rgb(56, 133, 40);
+  color: white;
+  font-weight: bold;
+}
+
+.destroybtn {
+  display: inline-block;
+  padding: 20px;
+  margin: 50px 0;
+  border: 2px solid black;
+  text-decoration: none;
+  background-color: rgb(22, 21, 21);
+  color: white;
+  font-weight: bold;
+}
+
+.memory {
+  width: 50vw;
+  font-size: 50px;
+  padding: 20px 100px;
+  border: 6px double black;
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.word-regi {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.regi {
+  width: 50vw;
+  padding: 20px 50px;
+  text-decoration: none;
+  border: 2px solid black;
+  background-color: rgb(37, 164, 202);
+  color: white;
+  font-weight: bold;
+}
+
+.word-show {
+  margin: 20px;
 }
 
 .word-show h1{
