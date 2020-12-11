@@ -20,7 +20,6 @@
             <% if user_signed_in?%>
               <ul class = "logout">
                 <li>
-                  <%= link_to "新規リスト作成", new_wordlist_path, class: "header-btn" %>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %>
                 </li>
               </ul>

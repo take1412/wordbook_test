@@ -1,11 +1,13 @@
   <div class = "word-show">
-    <%= paginate @words %>
       <% if @words %>
           <% @words.each do |word| %>
         <div class = "word-list">
             <p class = "word-name" id = "word-name" ><%= word.wordname%></p>
-            <p class = "word-mean" hidden ><%= word.mean%></p>
+            <p class = "word-mean" id = "word-mean" hidden ><%= word.mean%></p>
         </div>
         <% end %>
       <% end %>
+      <div class = "page">
+        <%= paginate @words%>
+      </div>
   </div>

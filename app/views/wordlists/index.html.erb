@@ -1,6 +1,7 @@
 <div class = "main">
   <div class = "word-lists">
     <% @wordlists.each do |wordlist|%>
+    <ul>
       <li class = "lists">
         <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
           <div class = "list-name-content">
@@ -12,8 +13,9 @@
           </div>
         <% end %>
       </li>
+    </ul>
     <% end %>
   
-  
+  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
   </div>
 </div>

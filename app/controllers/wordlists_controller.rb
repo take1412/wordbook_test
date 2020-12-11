@@ -3,7 +3,7 @@ class WordlistsController < ApplicationController
 
 
   def index
-    @wordlists = Wordlist.includes(:user)
+    @wordlists = Wordlist.includes(:user).order('created_at DESC')
   end
 
   def new
