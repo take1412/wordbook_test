@@ -3,7 +3,7 @@ class Wordlist < ApplicationRecord
   belongs_to :release
 
   belongs_to :user
-  has_many :words
+  has_many :words, dependent: :destroy
 
 
   with_options presence: true do

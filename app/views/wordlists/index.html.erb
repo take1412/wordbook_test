@@ -1,22 +1,23 @@
 <div class = "main">
   <div class = "word-lists">
-  <% if @wordlists.length != 0%>
+  <% if Wordlist.where("release_id = 1").length != 0 %>
     <% @wordlists.each do |wordlist|%>
+    <% if wordlist.release_id == 1 %>
     <ul>
       <li class = "lists">
         <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
           <div class = "list-name-content">
             <%= wordlist.listname%>
           </div>
-
           <div class = "list-text-content">
             <%= wordlist.text%>
           </div>
-        <% end %>
       </li>
     </ul>
+        <% end %>
     <% end %>
-    <% else %>
+    <% end %>
+    <% else  %>
     <p>単語を登録しよう！</p>
     <% end %>
   </div>
