@@ -4,6 +4,13 @@
     <h1>リストの名前</h1>
     <h2 class = "show-listname"><%= @wordlist.listname %></h2>
     <p class = "show-listtext"><%= @wordlist.text%></p>
+    <% if @words.length != 0 %>
+      <div class = "wordmemory">
+        <%= link_to "単語を記憶する", wordlist_words_path(@wordlist.id) , class: "memory" %>
+      </div>
+      <% else %>
+      <div class = "no-words">単語を登録しよう！</div>
+      <% end %>
     <% if user_signed_in? && current_user.id == @wordlist.user_id %>
       <ul class = "show-btn">
         <li>
@@ -11,9 +18,6 @@
           <%= link_to "リストを削除する", wordlist_path(@wordlist.id), method: :delete, class: "destroybtn"%>
         </li>
       </ul>
-      <div　class = "word-memory">
-        <%= link_to "単語を記憶する", wordlist_words_path(@wordlist.id) , class: "memory" %>
-      </div>
       <div class = "word-regi">
         <%= link_to "単語を登録する", new_wordlist_word_path(@wordlist.id), class: "regi" %>
       </div>

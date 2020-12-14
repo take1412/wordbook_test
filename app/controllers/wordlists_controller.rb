@@ -1,9 +1,10 @@
 class WordlistsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_wordlist, only: [:show, :edit, :destroy, :update]
 
 
   def index
-    @wordlists = Wordlist.includes(:user).order('created_at DESC')
+    @wordlists = Wordlist.page(params[:page]).per(10).order('created_at DESC')
   end
 
   def new
@@ -44,7 +45,7 @@ class WordlistsController < ApplicationController
   private
 
   def wordlist_params
-    params.require(:wordlist).permit(:listname, :text).merge(user_id: current_user.id)
+    params.require(:wordlist).permit(:listname, :text, :release_id).merge(user_id: current_user.id)
   end
 
   def set_wordlist

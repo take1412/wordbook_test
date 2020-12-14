@@ -19,3 +19,9 @@
   font-size: 25px;
   color: red;
 }
+
+.release-select {
+  width: 100px;
+  height: 50px;
+  margin: 10px 0;
+}

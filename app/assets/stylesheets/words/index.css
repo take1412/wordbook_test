@@ -1,3 +1,60 @@
-.page {
+.show-page {
   text-align: center;
+  margin-top: 200px;
 }
+
+.word-show-memory {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.word-memory {
+  position: relative;
+  transition: 0.8s;
+  width: 600px;
+  height: 100px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.word-memory.active{
+  transform: rotateY(180deg);
+
+}
+
+.word-show-name {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 40px;
+  line-height: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
+  background-color: white;
+  backface-visibility: hidden;
+}
+
+
+.word-show-mean {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  line-height: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
+  transform: rotateY(180deg);
+  background-color: white;
+  backface-visibility: hidden;
+}
+

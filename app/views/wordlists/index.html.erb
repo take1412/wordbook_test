@@ -1,5 +1,6 @@
 <div class = "main">
   <div class = "word-lists">
+  <% if @wordlists.length != 0%>
     <% @wordlists.each do |wordlist|%>
     <ul>
       <li class = "lists">
@@ -15,7 +16,12 @@
       </li>
     </ul>
     <% end %>
-  
-  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
+    <% else %>
+    <p>単語を登録しよう！</p>
+    <% end %>
   </div>
+  <div class = "index-page">
+  <%= paginate @wordlists%>
+  </div>
+  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
 </div>
