@@ -1,12 +1,19 @@
 class WordsController < ApplicationController
+  before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand]
+  before_action :move_to_index, only: [:edit, :destroy]
+
 
   def index
-    @wordlist = Wordlist.find(params[:wordlist_id])
+    @words = @wordlist.words.page(params[:page]).per(1)
+    
+  end
+  
+  def rand
+    @wordlist.words.shuffle
     @words = @wordlist.words.page(params[:page]).per(1)
   end
 
   def new
-    @wordlist = Wordlist.find(params[:wordlist_id])
     @word = Word.new
   end
 
@@ -15,7 +22,6 @@ class WordsController < ApplicationController
   end
 
   def create
-    @wordlist = Wordlist.find(params[:wordlist_id])
     @word = Word.new(word_params)
     if @word.save
       redirect_to wordlist_path(@word.wordlist.id)
@@ -28,6 +34,14 @@ class WordsController < ApplicationController
 
   def word_params
     params.require(:word).permit(:wordname, :mean).merge(user_id: current_user.id, wordlist_id: params[:wordlist_id])
+  end
+
+  def set_wordlist
+    @wordlist = Wordlist.find(params[:wordlist_id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @wordlist.user.id
   end
 
 end

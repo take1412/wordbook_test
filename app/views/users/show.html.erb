@@ -1,0 +1,27 @@
+<div class = "main">
+<h1><%= "#{@nickname}さんの投稿ページ" %></h1>
+  <div class = "word-lists">
+  <% if @wordlists.length != 0 %>
+    <% @wordlists.each do |wordlist|%>
+    <ul>
+      <li class = "lists">
+        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
+          <div class = "list-name-content">
+            <%= wordlist.listname%>
+          </div>
+          <div class = "list-text-content">
+            <%= wordlist.text%>
+          </div>
+      </li>
+    </ul>
+        <% end %>
+    <% end %>
+    <% else  %>
+    <p>単語を登録しよう！</p>
+    <% end %>
+  </div>
+  <div class = "index-page">
+  <%= paginate @wordlists%>
+  </div>
+  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
+</div>

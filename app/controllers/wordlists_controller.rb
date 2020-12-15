@@ -1,7 +1,7 @@
 class WordlistsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_wordlist, only: [:show, :edit, :destroy, :update]
-
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @wordlists = Wordlist.page(params[:page]).per(10).order('created_at DESC')
@@ -51,4 +51,9 @@ class WordlistsController < ApplicationController
   def set_wordlist
     @wordlist = Wordlist.find(params[:id])
   end
+
+  def move_to_index
+    redirect_to action: :index unless current_user.id == @wordlist.user.id
+  end
+
 end

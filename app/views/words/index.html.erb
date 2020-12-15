@@ -11,5 +11,7 @@
       <% end %>
       <div class = "show-page">
         <%= paginate @words%>
+        <%= link_to "トップページに戻る", "/" %>
+        <%= link_to "リストに戻る", wordlist_path(@wordlist.id)%>
       </div>
   </div>

@@ -11,6 +11,9 @@
     <div class = "lists-text">
       <%= form.text_area :text, placeholder: "説明文", rows: "4", class: "listtext" %>
     </div>
+    <div class = "List-release">
+      <%= form.collection_select(:release_id, Release.all, :id, :name, {}, {class: "release-select"}) %>
+    </div>
     <div class = "lists-btn">
       <%= form.submit "リスト作成" %>
     </div>

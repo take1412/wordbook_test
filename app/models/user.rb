@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :wordbooks
+  has_many :wordlists
   has_many :words
 
   validates :nickname, presence: true
