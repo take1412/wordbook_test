@@ -11,4 +11,5 @@ class Wordlist < ApplicationRecord
     validates :text
     validates :release_id, numericality: { other_than: 0 }
   end
+
 end

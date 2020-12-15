@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand]
+  before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand, :new]
   before_action :move_to_index, only: [:edit, :destroy]
 
 
@@ -9,8 +9,8 @@ class WordsController < ApplicationController
   end
   
   def rand
-    @wordlist.words.shuffle
-    @words = @wordlist.words.page(params[:page]).per(1)
+
+    @words = @wordrand.page(params[:page]).per(1)
   end
 
   def new

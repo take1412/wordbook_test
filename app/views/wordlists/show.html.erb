@@ -7,6 +7,7 @@
     <% if @words.length != 0 %>
       <div class = "wordmemory">
         <%= link_to "単語を記憶する", wordlist_words_path(@wordlist.id) , class: "memory" %>
+        <%= link_to "単語をランダム記憶する", wordlist_wordsrand_path(@wordlist.id) , class: "memory" %>
       </div>
       <% else %>
       <div class = "no-words">単語を登録しよう！</div>
