@@ -8,7 +8,6 @@ class WordsController < ApplicationController
 
   def rand
     @words = Kaminari.paginate_array(@@word_rand).page(params[:page]).per(1)
-    # @words = @@word_rand.page(params[:page]).per(1)
   end
 
   def new

@@ -12,9 +12,8 @@ class User < ApplicationRecord
   def self.user_search(search)
     if search != ''
       User.where('nickname LIKE ?', "#{search}%")
-      # Wordlist.where('text LIKE(?)', "%#{search}%")
     else
-      Wordlist.all
+      User.all
     end
   end
 end

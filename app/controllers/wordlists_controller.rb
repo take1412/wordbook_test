@@ -27,11 +27,15 @@ class WordlistsController < ApplicationController
 
   def search
     @model = params['search']['model']
-    @wordlists = if @model == 'list'
-                   Wordlist.search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
-                 else
-                   User.user_search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
-                 end
+    if params[:keyword] == ""
+      redirect_to root_path
+    else
+      @wordlists = if @model == 'list'
+                    Wordlist.search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                  else
+                    User.user_search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                  end
+      end
   end
 
   def edit
