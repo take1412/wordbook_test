@@ -8,7 +8,7 @@ class Wordlist < ApplicationRecord
   with_options presence: true do
     validates :listname
     validates :text
-    validates :release_id, numericality: { other_than: 0 }
+    validates :release_id, numericality: { other_than: 0 , message: "どちらか設定してください"}
   end
 
   def self.search(search)

@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        
+      wordlist:
+        listname: リストの名前
+        text: 説明文
+        release_id: 公開・非公開
+
+      word:
+        wordname: 単語の名前
+        mean: 単語の意味
