@@ -2,15 +2,13 @@ class WordsController < ApplicationController
   before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand, :new]
   before_action :move_to_index, only: [:edit, :destroy]
 
-
   def index
     @words = @wordlist.words.page(params[:page]).per(1)
-    
   end
-  
-  def rand
 
-    @words = @wordrand.page(params[:page]).per(1)
+  def rand
+    @words = Kaminari.paginate_array(@@word_rand).page(params[:page]).per(1)
+    # @words = @@word_rand.page(params[:page]).per(1)
   end
 
   def new
@@ -18,7 +16,6 @@ class WordsController < ApplicationController
   end
 
   def show
-    
   end
 
   def create
@@ -43,5 +40,4 @@ class WordsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id == @wordlist.user.id
   end
-
 end

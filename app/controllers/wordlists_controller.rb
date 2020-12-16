@@ -22,14 +22,22 @@ class WordlistsController < ApplicationController
 
   def show
     @words = @wordlist.words.includes(:user)
+    @@word_rand = @wordlist.words.order('RAND()')
+  end
+
+  def search
+    @model = params['search']['model']
+    @wordlists = if @model == 'list'
+                   Wordlist.search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                 else
+                   User.user_search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                 end
   end
 
   def edit
-    
   end
 
   def destroy
-    
     @wordlist.destroy
     redirect_to root_path
   end
@@ -55,5 +63,4 @@ class WordlistsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id == @wordlist.user.id
   end
-
 end
