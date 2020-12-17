@@ -1,0 +1,25 @@
+<div class = "word-lists">
+  <% if @favorites.length != 0 %>
+    <% @favorites.each do |favorite|%>
+    <ul>
+      <li class = "lists">
+        <%= link_to wordlist_path(favorite.wordlist.id), class: "listlink" do %>
+          <div class = "list-name-content">
+            <%= favorite.wordlist.listname%>
+          </div>
+          <div class = "list-text-content">
+            <%= favorite.wordlist.text%>
+          </div>
+        <% end %>
+          <p>by_<%= favorite.wordlist.user.nickname%></p>
+      </li>
+    </ul>
+    <% end %>
+  <% else %>
+    <p>お気に入りを登録しよう！</p>
+  <% end %>
+  </div>
+  <div class = "index-page">
+  <%= paginate @favorites%>
+  </div>
+</div>

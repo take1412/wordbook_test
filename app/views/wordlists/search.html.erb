@@ -1,74 +1,68 @@
-<% if @model == "list"%>
-<div class = "main">
-<%= form_with(url: search_wordlists_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.select 'search[model]', options_for_select({ "ユーザー" => "user", "リスト" => "list" }) %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-  <div class = "word-lists">
-  <% if Wordlist.where("release_id = 1").length != 0 %>
-    <% @wordlists.each do |wordlist|%>
-    <% if wordlist.release_id == 1 %>
-    <ul>
-      <li class = "lists">
-        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <div class = "list-name-content">
-            <%= wordlist.listname%>
-          </div>
-          <div class = "list-text-content">
-            <%= wordlist.text%>
-          </div>
-      </li>
-    </ul>
-        <% end %>
-    <% end %>
-    <% end %>
-    <% else  %>
-    <p>単語を登録しよう！</p>
-    <% end %>
+<% if @wordlists.length != 0 %>
+  <% if @model == "list"%>
+  <div class = "main">
+    <div class = "word-lists">
+    <% if Wordlist.where("release_id = 1").length != 0 %>
+      <% @wordlists.each do |wordlist|%>
+      <% if wordlist.release_id == 1 %>
+      <ul>
+        <li class = "lists">
+          <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
+            <div class = "list-name-content">
+              <%= wordlist.listname%>
+            </div>
+            <div class = "list-text-content">
+              <%= wordlist.text%>
+            </div>
+            <p>by_<%= wordlist.user.nickname%></p>
+        </li>
+      </ul>
+          <% end %>
+      <% end %>
+      <% end %>
+      <% else  %>
+      <p>単語を登録しよう！</p>
+      <% end %>
+    </div>
+    <div class = "index-page">
+    <%= paginate @wordlists%>
+    </div>
   </div>
-  <div class = "index-page">
-  <%= paginate @wordlists%>
-  </div>
-  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
-</div>
 
 
+
+  <% else %>
+  <div class = "main">
+    <div class = "word-lists">
+    <% if Wordlist.where("release_id = 1").length != 0 %>
+    <% @wordlists.each do |user| %>
+      <%user.wordlists.each do |wordlist|%>
+      <% if wordlist.release_id == 1 %>
+      <ul>
+        <li class = "lists">
+          <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
+            <div class = "list-name-content">
+              <%= wordlist.listname%>
+            </div>
+            <div class = "list-text-content">
+              <%= wordlist.text%>
+            </div>
+        <p>by_<%= wordlist.user.nickname%></p>
+        </li>
+      </ul>
+          <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% else  %>
+      <p>単語を登録しよう！</p>
+      <% end %>
+    </div>
+    <div class = "index-page">
+    <%= paginate @wordlists%>
+
+  <% end %>
 
 <% else %>
-<div class = "main">
-<%= form_with(url: search_wordlists_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.select 'search[model]', options_for_select({ "ユーザー" => "user", "リスト" => "list" }) %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-  <div class = "word-lists">
-  <% if Wordlist.where("release_id = 1").length != 0 %>
-  <% @wordlists.each do |user| %>
-    <%user.wordlists.each do |wordlist|%>
-    <% if wordlist.release_id == 1 %>
-    <ul>
-      <li class = "lists">
-        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <div class = "list-name-content">
-            <%= wordlist.listname%>
-          </div>
-          <div class = "list-text-content">
-            <%= wordlist.text%>
-          </div>
-      </li>
-    </ul>
-        <% end %>
-    <% end %>
-    <% end %>
-    <% end %>
-    <% else  %>
-    <p>単語を登録しよう！</p>
-    <% end %>
-  </div>
-  <div class = "index-page">
-  <%= paginate @wordlists%>
-  </div>
-  <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
-</div>
+  <p>検索結果に該当する物はありませんでした。</p>
 <% end %>

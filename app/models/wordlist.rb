@@ -4,6 +4,8 @@ class Wordlist < ApplicationRecord
 
   belongs_to :user
   has_many :words, dependent: :destroy
+  has_many :favorite, dependent: :destroy
+  has_many :authorities, dependent: :destroy
 
   with_options presence: true do
     validates :listname
@@ -17,6 +19,10 @@ class Wordlist < ApplicationRecord
     else
       Wordlist.all
     end
+  end
+
+  def favorited_by?(user)
+    Favorite.where(user_id: user).exists?
   end
 
 end

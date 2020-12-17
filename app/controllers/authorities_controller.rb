@@ -1,0 +1,2 @@
+class AuthoritiesController < ApplicationController
+end
