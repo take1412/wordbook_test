@@ -1,3 +1,4 @@
+<% if current_user.id == @user.id %>
 <div class = "main">
 <h1><%= "#{@nickname}さんの投稿ページ" %></h1>
   <div class = "word-lists">
@@ -24,3 +25,34 @@
   <%= paginate @wordlists%>
   </div>
 </div>
+
+<% else %>
+
+<h1><%= "#{@nickname}さんの投稿ページ" %></h1>
+  <div class = "word-lists">
+  <% if Wordlist.where("release_id = 1").length != 0 %>
+    <% @wordlists.each do |wordlist|%>
+    <% if wordlist.release_id == 1 %>
+    <ul>
+      <li class = "lists">
+        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
+          <div class = "list-name-content">
+            <%= wordlist.listname%>
+          </div>
+          <div class = "list-text-content">
+            <%= wordlist.text%>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+    <% end %>
+    <% end %>
+    <% else  %>
+    <p>単語がありません</p>
+    <% end %>
+  </div>
+  <div class = "index-page">
+  <%= paginate @wordlists%>
+  </div>
+</div>
+<% end %>

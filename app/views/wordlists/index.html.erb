@@ -13,7 +13,7 @@
             <%= wordlist.text%>
           </div>
         <% end %>
-          <p>by_<%= wordlist.user.nickname%></p>
+          <%= link_to "作成者:#{wordlist.user.nickname}", user_path(wordlist.user.id) %>
       </li>
     </ul>
     <% end %>
