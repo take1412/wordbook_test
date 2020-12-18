@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand, :new]
   before_action :move_to_index, only: [:edit, :destroy]
 

@@ -24,6 +24,16 @@
       </div>
       <%= link_to "ユーザー共有" , new_wordlist_authority_path(@wordlist.id) %>
       <% else %>
+        <% if user_signed_in? && @authority_user != nil && @authority_user.authority_user_code == current_user.user_code %>
+          <ul class = "show-btn">
+            <li>
+              <%= link_to "リストを編集する", edit_wordlist_path(@wordlist.id), class: "editbtn"%>
+            </li>
+          </ul>
+          <div class = "word-regi">
+            <%= link_to "単語を登録する", new_wordlist_word_path(@wordlist.id), class: "regi" %>
+          </div>
+        <% end %>
       <% if @wordlist.favorited_by?(current_user) %>
         <%= link_to "ブックマークを外す", wordlist_favorite_path(@wordlist.id), method: :delete %>
       <% else %>

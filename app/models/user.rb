@@ -4,11 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :wordlists
+  has_many :wordlists, dependent: :destroy
   has_many :words
   has_many :favorite, dependent: :destroy
 
-  validates :nickname, presence: true
+  with_options presence: true do
+    validates :nickname
+    validates :user_code, uniqueness: true
+  end
 
   def self.user_search(search)
     if search != ''

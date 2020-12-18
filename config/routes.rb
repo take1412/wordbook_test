@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "wordlists#index"
   resources :wordlists do
     resources :words, only: [:index, :new, :show, :create]
-    resources :authoritys, only: [:index, :new, :create, :destroy]
+    resources :authorities, only: [:index, :new, :create, :destroy]
     get "wordsrand" , to: "words#rand"
     get "wordsrand/:id" , to: "words#next_page"
     collection do
