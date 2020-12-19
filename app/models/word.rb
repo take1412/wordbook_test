@@ -7,5 +7,4 @@ class Word < ApplicationRecord
     validates :mean
   end
 
-  # @@word_rand = @wordlist.words.order("RAND()")
 end

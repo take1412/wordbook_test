@@ -21,8 +21,8 @@ class Wordlist < ApplicationRecord
     end
   end
 
-  def favorited_by?(user)
-    Favorite.where(user_id: user).exists?
+  def favorite_by?(user)
+    Favorite.where(user_id: user.id).exists?
   end
 
 end

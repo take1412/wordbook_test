@@ -7,19 +7,21 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite = @wordlist.favorite.new(user_id: current_user.id)
+    favorite = Favorite.new(user_id: current_user.id, wordlist_id: params[:wordlist_id])
     favorite.save
-    redirect_to request.referer
+    
+
+    # render json:{ wordlist: @wordlist }
+
+    # respond_to do |format|
+    #   format.js {render :template => "wordlists/show",locals: { favorite: @favorite, wordlist: @wordlist} } 
+    #   end
   end
 
   def destroy
-    favorite = @wordlist.favorite.find_by(user_id: current_user.id)
-    if favorite.present?
-      favorite.destroy
-      redirect_to request.referer
-    else
-      redirect_to request.referer
-    end
+    favorite = Favorite.find_by(user_id: current_user.id, wordlist_id: params[:wordlist_id])
+    favorite.destroy
+
   end
 
   private

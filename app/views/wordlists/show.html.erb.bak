@@ -34,9 +34,11 @@
             <%= link_to "単語を登録する", new_wordlist_word_path(@wordlist.id), class: "regi" %>
           </div>
         <% end %>
-          <div id = 'favorites_buttons_<%= @wordlist.id %>'>
-             <%= render partial: 'favorites/favorite', locals: { wordlist: @wordlist} %>
-          </div>
+      <% if @wordlist.favorited_by?(current_user) %>
+        <%= link_to "ブックマークを外す", wordlist_favorite_path(@wordlist.id), method: :delete %>
+      <% else %>
+        <%= link_to "ブックマーク",  wordlist_favorites_path(@wordlist.id), method: :post %>
+      <% end %>
     <% end %>
   </div>
 
