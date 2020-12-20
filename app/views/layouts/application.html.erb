@@ -11,20 +11,18 @@
   </head>
 
   <body>
-    <header class = "header">
-        <div class = "title-contents">
-          <div class = "title">
-            <h1><a href="/">単語帳アプリ</a></h1>
-            <p>自分だけの単語帳を登録しよう！</p>
-          </div>
+    <header>
+        <a href="/">WordList</a>
+        <p>自分だけの単語帳を登録しよう！</p>
+    </header>
+    <nav>
           <%= form_with(url: search_wordlists_path, local: true, method: :get, class: "search-form") do |form| %>
           <%= form.select 'search[model]', options_for_select({ "ユーザー" => "user", "リスト" => "list" }) %>
           <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
           <%= form.submit "検索", class: "search-btn" %>
           <% end %>
-          <div class = "header-user">
             <% if user_signed_in?%>
-              <ul class = "logout">
+              <ul class = "nav-btn">
                 <li>
                   <%= link_to "お気に入り一覧", favorite_path, class: "header-btn" %>
                   <%= link_to "マイページ", user_path(current_user.id), class: "header-btn" %>
@@ -32,18 +30,19 @@
                 </li>
               </ul>
             <% else %>
-              <ul class = "login">
+              <ul class = "nav-btn">
                 <li>
                   <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
                   <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
                 </li>
               </ul>
             <% end %>
-          </div>
-        </div>
         
-    </header>
+        
+      </nav>
+    <div class = "main-content">
     <%= yield %>
+    </div>
     <footer class = "footer">
       <div>
         </div>
