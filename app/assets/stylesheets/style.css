@@ -121,9 +121,10 @@ form select{
 
 .main-content {
   grid-area: main;
-  background-color: #EEFFFF;
+  background-image: url("images/43455.png");
+  background-size: 100%;
+  background-position: center;
 }
-
 
 .footer {
   grid-area: footer;

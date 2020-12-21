@@ -49,14 +49,22 @@
             <% else %>
               <ul class = "nav-btn">
                 <li>
-                  <%= link_to "新規登録", new_user_registration_path, class: "header-btn" %>
-                  <%= link_to "ログイン", new_user_session_path, class: "header-btn" %>
+                  <%= link_to new_user_registration_path, class: "header-btn" do %>
+                  <i class = "fas fa-user-plus">
+                  <p>新規登録</p>
+                  </i>
+                  <% end %>
+                  <%= link_to new_user_session_path, class: "header-btn" do %>
+                  <i class = "fas fa-sign-in-alt">
+                  <p>ログイン</p>
+                  </i>
+                  <% end %>
                 </li>
               </ul>
             <% end %>
       </nav>
     <div class = "main-content">
-    <%= yield %>
+      <%= yield %>
     </div>
     <footer class = "footer">
         <% if user_signed_in? %>

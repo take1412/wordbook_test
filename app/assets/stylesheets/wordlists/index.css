@@ -15,7 +15,7 @@
 
 .lists {
   margin: 20px;
-  background-color: #FFFFF0;
+  background-color: #FFFF99;
   outline: 2px solid gray;
 }
 
@@ -24,7 +24,7 @@
   color: black;
 }
 
-.border {
+.ex {
   text-decoration: underline;
   padding: 5px;
 }
@@ -61,4 +61,11 @@
 .index-page {
   text-align: center;
   margin-top: 50px;
+}
+
+.no-search {
+  text-align: center;
+  padding: 50px;
+  font-weight: bold;
+  font-size: 20px;
 }

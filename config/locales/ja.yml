@@ -6,6 +6,7 @@ ja:
       user:
         nickname: ニックネーム
         email: メールアドレス
+        user_code: ユーザーコード
         password: パスワード
         password_confirmation: 確認用パスワード
         

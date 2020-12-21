@@ -1,5 +1,7 @@
+ <% if user_signed_in? %>
  <% if @wordlist.favorite_by?(current_user) %>
       <p><span>お気に入り解除: </span><%=link_to "お気に入り解除", wordlist_favorites_path(@wordlist.id), method: :delete, remote: true %></p>
   <% else %>
       <p><span>お気に入り登録: </span><%=link_to "お気に入り", wordlist_favorites_path(@wordlist.id), method: :post, remote: true %></p>
   <% end %>
+ <% end %>
