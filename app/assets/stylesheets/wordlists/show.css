@@ -3,13 +3,9 @@
   margin: 0 auto;
 }
 
-.list-show {
-  padding: 10px;
-}
-
 .list-tr {
   outline: 3px solid black;
-  background-color: #FFFF99;
+  background-color: #FFFF77;
 }
 
 .show-ex {
@@ -65,7 +61,26 @@
   overflow-x: hidden;
   word-break: break-all;
   line-height: 30px;
+  border-bottom: 1px solid black;
+}
+
+.show-list-nickname a{
+  text-decoration: none;
   color: black;
+}
+
+.ex-user {
+  height: 50px;
+  line-height: 50px;
+}
+
+.show-authority {
+  height: 50px;
+  padding: 0 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
+  border-bottom: 1px solid black;
 }
 
 .show-btn {
@@ -107,22 +122,35 @@
 }
 
 .wordmemory {
-  margin: 20px;
-
+  margin: 20px 0;
+  display: flex;
+  width: 100%;
 }
 
 .memory {
-  width: 50vw;
-  font-size: 50px;
-  padding: 20px 100px;
-  border: 6px double black;
-  color: red;
+  display: inline;
+  text-align: center;
+  font-size: 40px;
+  margin: 10px;
+  width: 50%;
+  height: 140px;
+  background-color: red;
+  border: 6px solid black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-.no-words {
+.memory1 {
+  line-height: 140px;
+}
 
+.memory2 {
+  line-height: 70px;
+}
+
+
+.no-words {
   font-size: 50px;
   padding: 20px 100px;
   color: black;
