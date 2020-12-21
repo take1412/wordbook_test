@@ -1,17 +1,17 @@
 body {
   width: 100vw;
-  margin: 0 auto;
   min-height: 100vh;
+  margin: 0;
   display: grid;
   grid-template:
       "... header ..." 35px
-      "... ...... ..." 10px
+      "... ...... ..." auto
       "... nav    ..." 100px
-      "... ...... ..." 10px
+      "... ...... ..." auto
       "... main   ..." 1fr
-      "... ...... ..." 10px
+      "... ...... ..." auto
       "... footer ..." 100px
-      / 10px 1fr 10px; 
+      / auto 1fr auto; 
 
 }
 header {
@@ -19,10 +19,12 @@ header {
   background-color: black;
   color: white;
   line-height: 35px;
+  width: 100%;
+  position: fixed;
 }
 
 
-header a{
+.title{
   font-size: 30px;
   letter-spacing: 1px;
   font-family: cursive;
@@ -35,35 +37,120 @@ header p {
   padding-left: 10px;
 }
 
+.hello {
+  float: right;
+  margin-right: 20px;
+}
+
+.hello-btn {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
 
 nav {
+  top: 35px;
+  position: relative;
   grid-area: nav;
+  background-color: gray;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+}
+
+.word-png {
+  position: absolute;
+  height: 100%;
+  left: 20px;
+  width: 300px;
+  opacity: 0.9;
 }
 
 .search-form {
+  height: 100px;
   display: inline;
+  line-height: 100px;
+}
+
+form select{
+  width: 100px;
+  height: 30px;
+}
+
+.search-input {
+  width: 300px;
+}
+
+.search-btn {
+  font-size: 20px;
+  padding: 0 10px;
+  background-color: white;
+  color: black;
 }
 
 .nav-btn {
-  text-align: right;
+  position: absolute;
+  display: inline;
+  right: 10px;  
+  height: 100px;
 }
 
 .header-btn {
-  padding: 20px;
-  border: 2px solid black;
-  background-color: white;
-  text-decoration: none;
+  margin: 0 10px;
+  text-align: center;
+  float: left;
+}
+
+.fas {
+  position: relative;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  color: rgb(214, 214, 214);
+}
+
+.header-btn p {
+  position: absolute;
+  font-size: 15px;
+  width: 100px;
+  bottom: 10px;
+  height: 20px;
+
 }
 
 .main-content {
   grid-area: main;
+  background-color: #EEFFFF;
 }
 
 
 .footer {
   grid-area: footer;
-  width: 95vw;
-  height: 50px;
+  background-color: gray;
+}
+
+.new-list-btn {
+  width: 150px;
+  position: fixed;
+  margin: 0 10px;
+  text-align: center;
+  float: left;
+  right: 30px;
+  bottom: 30px;
   background-color: skyblue;
-  padding: 50px;
+  border-radius: 15px;
+}
+
+.fa-plus {
+  width: 150px;
+  height: 80px;
+  color: white;
+}
+
+.new-list-btn p{
+  font-size: 15px;
+  width: 150px;
+  bottom: 10px;
+  height: 20px;
 }

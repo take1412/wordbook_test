@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -12,21 +13,37 @@
 
   <body>
     <header>
-        <a href="/">WordList</a>
+        <a class = "title" href="/">WordList</a>
         <p>自分だけの単語帳を登録しよう！</p>
+        <% if user_signed_in?%>
+        <p class = "hello">ようこそ！ <%= link_to current_user.nickname, user_path(current_user.id), class: "hello-btn" %>さん</p>
+        <% end %>
     </header>
     <nav>
+      <%= link_to image_tag("13315", class: "word-png"), "/"%>
           <%= form_with(url: search_wordlists_path, local: true, method: :get, class: "search-form") do |form| %>
           <%= form.select 'search[model]', options_for_select({ "ユーザー" => "user", "リスト" => "list" }) %>
           <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-          <%= form.submit "検索", class: "search-btn" %>
+          <%= form.button icon('fa', 'search'), type: "submit", class: "search-btn" %>
           <% end %>
             <% if user_signed_in?%>
               <ul class = "nav-btn">
                 <li>
-                  <%= link_to "お気に入り一覧", favorite_path, class: "header-btn" %>
-                  <%= link_to "マイページ", user_path(current_user.id), class: "header-btn" %>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %>
+                  <%= link_to favorite_path, class: "header-btn" do %>
+                  <i class = "fas fa-star">
+                  <p>お気に入り</p>
+                  </i>
+                  <% end %>
+                  <%= link_to user_path(current_user.id), class: "header-btn" do %>
+                  <i class = "fas fa-user">
+                  <p>マイページ</p>
+                  </i>
+                  <% end %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: "header-btn" do %>
+                  <i class = "fas fa-sign-out-alt">
+                  <p>ログアウト</p>
+                  </i>
+                  <% end %>
                 </li>
               </ul>
             <% else %>
@@ -37,21 +54,18 @@
                 </li>
               </ul>
             <% end %>
-        
-        
       </nav>
     <div class = "main-content">
     <%= yield %>
     </div>
     <footer class = "footer">
-      <div>
-        </div>
         <% if user_signed_in? %>
-          <%= link_to "新規リスト作成", new_wordlist_path, class: "new-list-btn" %>
+          <%= link_to new_wordlist_path, class: "new-list-btn" do %>
+          <i class = "fas fa-plus">
+          <p>新規リスト作成</p>
+          </i>
+          <% end %>
         <% end %>
-        </div>
-      </div>
-    
     </footer>
   </body>
 </html>

@@ -59,3 +59,4 @@ gem "active_hash"
 gem "pry-rails"
 gem "rails-i18n"
 gem 'jquery-rails'
+gem 'font-awesome-sass'
