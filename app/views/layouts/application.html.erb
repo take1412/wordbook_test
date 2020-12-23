@@ -19,7 +19,7 @@
         <p class = "hello">ようこそ！ <%= link_to current_user.nickname, user_path(current_user.id), class: "hello-btn" %>さん</p>
         <% end %>
     </header>
-    <nav>
+    <nav class = "navi">
       <%= link_to image_tag("13315", class: "word-png"), "/"%>
           <%= form_with(url: search_wordlists_path, local: true, method: :get, class: "search-form") do |form| %>
           <%= form.select 'search[model]', options_for_select({ "ユーザー" => "user", "リスト" => "list" }) %>
@@ -74,6 +74,7 @@
           </i>
           <% end %>
         <% end %>
+      <p　class = "footer-text">copyright ©️ WordList</p>
     </footer>
   </body>
 </html>

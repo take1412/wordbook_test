@@ -7,16 +7,16 @@
     <ul>
       <li class = "lists">
         <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <p class = "border">リストの名前：</p>
+          <p class = "ex">リストの名前：</p>
           <div class = "list-name-content">
             <%= wordlist.listname%>
           </div>
-          <p  class = "border">説明：</p>
+          <p  class = "ex">説明：</p>
           <div class = "list-text-content">
-            <%= wordlist.text%>
+            <%= simple_format (wordlist.text)%>
           </div>
         <% end %>
-                  <%= link_to "作成者: #{wordlist.user.nickname}", user_path(wordlist.user.id) , class: "create-list-user" %>
+          <%= link_to "作成者: #{wordlist.user.nickname}", user_path(wordlist.user.id) , class: "create-list-user" %>
       </li>
     </ul>
     <% end %>
@@ -40,11 +40,11 @@
     <ul>
       <li class = "lists">
         <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <p class = "border">リストの名前：</p>
+          <p class = "ex">リストの名前：</p>
           <div class = "list-name-content">
             <%= wordlist.listname%>
           </div>
-          <p  class = "border">説明：</p>
+          <p  class = "ex">説明：</p>
           <div class = "list-text-content">
             <%= wordlist.text%>
           </div>

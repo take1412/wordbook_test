@@ -15,8 +15,8 @@
 
 .lists {
   margin: 20px;
-  background-color: #FFFF77;
-  outline: 2px solid gray;
+  background-color: white;
+  outline: 5px solid tan;
 }
 
 .listlink {
@@ -46,14 +46,17 @@
   padding: 0 5px;
   width: 200px;
   height: 150px;
-  text-overflow: ellipsis;
-  overflow: hidden;
   word-break: break-all;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .create-list-user {
-  color: gray;
+  display: block;
+  color: black;
   text-decoration: underline;
+  background-color: tan;
+
 }
 
 

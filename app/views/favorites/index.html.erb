@@ -5,11 +5,11 @@
     <ul>
       <li class = "lists">
         <%= link_to wordlist_path(favorite.wordlist.id), class: "listlink" do %>
-          <p class = "border">リストの名前：</p>
+          <p class = "ex">リストの名前：</p>
           <div class = "list-name-content">
             <%= favorite.wordlist.listname%>
           </div>
-          <p  class = "border">説明：</p>
+          <p  class = "ex">説明：</p>
           <div class = "list-text-content">
             <%= favorite.wordlist.text%>
           </div>

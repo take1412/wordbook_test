@@ -5,11 +5,12 @@
 
 .list-tr {
   outline: 3px solid black;
-  background-color: #FFFF77;
+  background-color: white;
 }
 
 .show-ex {
   text-decoration: underline;
+  background-color: silver;
   font-weight: bold;
   font-size: 20px;
   padding-left: 30px;
@@ -32,9 +33,11 @@
   border-bottom: 1px solid black;
 }
 
+
 .show-listtext {
   height: 80px;
   padding: 0 10px;
+  font-size: 20px;
   overflow: scroll;
   overflow-x: hidden;
   word-break: break-all;
@@ -51,6 +54,7 @@
   height: 30x;
   line-height: 30px;
   outline: 1px solid black;
+  background-color: silver;
 }
 
 .show-list-nickname {
@@ -134,7 +138,7 @@
   margin: 10px;
   width: 50%;
   height: 140px;
-  background-color: red;
+  background-color: #d70035;
   border: 6px solid black;
   color: white;
   text-decoration: none;
@@ -159,12 +163,13 @@
 }
 
 .word-regi {
-  margin-top: 10px;
   text-align: center;
+  height: 70px;
 }
 
 .regi {
   width: 50vw;
+  line-height: 70px;
   padding: 20px 50px;
   text-decoration: none;
   border: 2px solid black;
@@ -174,38 +179,56 @@
 }
 
 .word-show {
-  margin: 20px;
+  width: 100%;
+  outline: 3px solid black;
+  background-color: white;
 }
 
 .word-show h1{
   text-align: center;
   font-weight: bold;
   font-size: 20px;
+  background-color: tan;
+  color: black;
 }
 
 .word-list {
   display: flex;
-  justify-content: center;
+  outline: 1px solid black;
+  background-color: white;
 }
 
-.word-name {
-  text-align: center;
-  width: 15%;
-  height: 60px;
-  border: 2px solid black;
-  padding: 10px;
-  overflow: scroll;
-  overflow-x: hidden;
-  word-break: break-all;
+.word-text {
+  display: flex;
+  border-top: 5px double black;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.wname{
+  width: 30%;
+  border-right: 1px solid black;
+}
+
+.wmean{
+  width: 70%;
   
 }
 
-.word-mean {
-  font-size: 13px;
-  width: 40%;
+.word-list-name {
+  text-align: center;
+  width: 30%;
   height: 60px;
-  border: 2px solid black;
-  padding: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
+  border-right: 1px solid black;
+}
+
+.word-list-mean {
+  font-size: 13px;
+  width: 70%;
+  height: 60px;
   word-break: break-all;
   overflow: scroll;
   overflow-x: hidden;

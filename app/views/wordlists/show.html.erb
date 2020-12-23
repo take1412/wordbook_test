@@ -14,7 +14,7 @@
     <p class = "show-ex">リストの名前</p>
     <h2 class = "show-listname"><%= @wordlist.listname %></h2>
     <p class = "show-ex">説明</p>
-    <p class = "show-listtext"><%= @wordlist.text%></p>
+    <%= simple_format (@wordlist.text), class: "show-listtext"%>
     <p class = "show-nickname">リスト作成者</p>
     <p class = "show-list-nickname"><%= link_to @wordlist.user.nickname, user_path(@wordlist.user.id) %></p>
     <% if user_signed_in? && current_user.id == @wordlist.user_id %>
@@ -26,9 +26,9 @@
       </p>
       </div>
       <ul class = "show-btn">
-          <%= link_to "リストを他のユーザーと共有する" , new_wordlist_authority_path(@wordlist.id) , class: "authoritybtn" %>
         <li>
           <%= link_to "リストを編集する", edit_wordlist_path(@wordlist.id), class: "editbtn"%>
+          <%= link_to "リストを他のユーザーと共有する" , new_wordlist_authority_path(@wordlist.id) , class: "authoritybtn" %>
           <%= link_to "リストを削除する", wordlist_path(@wordlist.id), method: :delete, class: "destroybtn"%>
         </li>
       </ul>
@@ -55,11 +55,15 @@
 
   <div class = "word-show">
     <h1>単語一覧</h1>
+    <div class = "word-text">
+            <p class = "wname">単語の名前：</p>
+            <p class = "wmean">単語の意味：</p>
+    </div>
       <% if @words %>
           <% @words.each do |word| %>
         <div class = "word-list">
-            <p class = "word-name" ><%= word.wordname%></p>
-            <p class = "word-mean" ><%= word.mean%></p>
+            <p class = "word-list-name" ><%= word.wordname%></p>
+            <p class = "word-list-mean" ><%= word.mean%></p>
         </div>
         <% end %>
       <% end %>
