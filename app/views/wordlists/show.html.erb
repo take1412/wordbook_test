@@ -56,14 +56,20 @@
   <div class = "word-show">
     <h1>単語一覧</h1>
     <div class = "word-text">
-            <p class = "wname">単語の名前：</p>
-            <p class = "wmean">単語の意味：</p>
+      <p class = "wname">単語の名前：</p>
+      <p class = "wmean">単語の意味：</p>
     </div>
       <% if @words %>
           <% @words.each do |word| %>
         <div class = "word-list">
             <p class = "word-list-name" ><%= word.wordname%></p>
             <p class = "word-list-mean" ><%= word.mean%></p>
+            <% if user_signed_in? && current_user.id == @wordlist.user_id %>
+              <%= link_to "編集", edit_wordlist_word_path(word.wordlist.id , word.id), class: "word-edit-btn"%>
+              <%= link_to "削除", wordlist_word_path(word.wordlist.id , word.id), method: :delete, class: "word-delete-btn"%>
+            <% elsif user_signed_in? && @authority_user != nil && @authority_user.authority_user_code == current_user.user_code %>
+              <%= link_to "編集", edit_wordlist_word_path(word.wordlist.id , word.id), class: "word-edit-btn"%>
+            <% end %>
         </div>
         <% end %>
       <% end %>

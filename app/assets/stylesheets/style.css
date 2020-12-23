@@ -111,7 +111,7 @@ form select{
 }
 
 .fa-star {
-  color: yellow;
+  color: #ffff8e;
 }
 
 .fa-user {
@@ -122,13 +122,20 @@ form select{
   color: orange;
 }
 
+.fa-user-plus {
+  color: chartreuse;
+}
+
+.fa-sign-in-alt {
+  color: coral;
+}
+
 .header-btn p {
   position: absolute;
   font-size: 15px;
   width: 100px;
   bottom: 10px;
   height: 20px;
-
 }
 
 .main-content {
