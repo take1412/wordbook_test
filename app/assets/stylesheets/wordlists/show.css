@@ -132,14 +132,12 @@
 }
 
 .memory {
-  display: inline;
   text-align: center;
   font-size: 40px;
-  margin: 10px;
+  margin: 0 10px;
   width: 50%;
   height: 140px;
-  background-color: #d70035;
-  border: 6px solid black;
+  background-color: #f56500;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -147,6 +145,25 @@
 
 .memory1 {
   line-height: 140px;
+}
+
+a.btn--red.btn--cubic {
+  border-bottom: 5px solid gray;
+}
+
+a.btn--red.btn--cubic:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #f56500;
+}
+
+a.btn--radius {
+  border-radius: 100vh;
+}
+
+.fa-position-right {
+  position: absolute;
+  top: calc(50% - .5em);
+  right: 1rem;
 }
 
 .memory2 {
@@ -184,19 +201,22 @@
   font-size: 50px;
   width: 100px;
   height: 100px;
-  color: rgb(214, 214, 214);
-  color: black;
+  color: red;
 }
 
 .favorite {
   background-color: #EEEEEE;
   text-align: center;
   font-weight: bold;
+  font-size: 18px;
   margin: 20px 0;
+  color: black;
+  text-decoration: underline;
 }
 
 .favorite i {
   height: 60px;
+  color: gold;
 }
 
 .favorite span {

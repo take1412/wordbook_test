@@ -1,6 +1,7 @@
 <% if current_user.id == @user.id %>
 <div class = "main">
 <h1 class = "page-title">ーマイページー</h1>
+  <div class = "user-status">
   <table class="table">
     <tbody>
       <tr>
@@ -11,9 +12,11 @@
         <th class="table_col1">ユーザーコード</th>
         <td class="table_col2"><%= @user.user_code %></td>
       </tr>
-
     </tbody>
   </table>
+  <%= link_to "ユーザー情報を編集する", edit_user_registration_path, class: "user-edit-btn" %>
+  <%= link_to "ユーザー削除する", user_registration_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "user-delete-btn" %>
+  </div>
   <div class = "word-lists">
   <% if @wordlists.length != 0 %>
     <% @wordlists.each do |wordlist|%>

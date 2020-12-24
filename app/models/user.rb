@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :favorite, dependent: :destroy
 
   with_options presence: true do
-    validates :nickname
+    validates :nickname, length: { maximum: 10 }
     validates :user_code, uniqueness: true, length: { maximum: 8 }
   end
 

@@ -54,9 +54,14 @@
 .create-list-user {
   display: block;
   color: black;
+  width: 210px;
   text-decoration: underline;
   background-color: tan;
-  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+
 }
 
 .no-wordlist {

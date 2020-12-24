@@ -163,6 +163,12 @@ form select{
   bottom: 30px;
   background-color: tan;
   border-radius: 15px;
+  border-bottom: 5px solid black;
+}
+
+.new-list-btn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid tan;
 }
 
 .fa-plus {

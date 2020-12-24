@@ -20,5 +20,31 @@
 .table_col2 {
   outline: 1px solid black;
   padding: 10px;
+}
 
+.user-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-edit-btn {
+  padding: 20px;
+  margin: 0 20px;
+  border: 2px solid black;
+  text-decoration: none;
+  background-color: rgb(56, 133, 40);
+  color: white;
+  font-weight: bold;
+}
+
+.user-delete-btn {
+  display: inline-block;
+  padding: 20px;
+  margin: 0 20px;
+  border: 2px solid black;
+  text-decoration: none;
+  background-color: rgb(22, 21, 21);
+  color: white;
+  font-weight: bold;
 }

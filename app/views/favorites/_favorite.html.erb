@@ -1,10 +1,10 @@
  <% if user_signed_in? %>
  <% if @wordlist.favorite_by?(current_user) %>
-      <p><span>お気に入りを解除する: </span><%=link_to wordlist_favorites_path(@wordlist.id), method: :delete, remote: true do %>
+      <p><span>お気に入りを解除する </span><%=link_to wordlist_favorites_path(@wordlist.id), method: :delete, remote: true do %>
       <i class = "fas fa-star"></i></p>
       <% end %>
   <% else %>
-      <p><span>お気に入りを登録する: </span><%=link_to wordlist_favorites_path(@wordlist.id), method: :post, remote: true do %>
+      <p><span>お気に入りを登録する </span><%=link_to wordlist_favorites_path(@wordlist.id), method: :post, remote: true do %>
       <i class = "far fa-star"></i></p>
       <% end %>
   <% end %>
