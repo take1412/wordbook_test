@@ -1,5 +1,5 @@
 class WordlistsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_wordlist, only: [:show, :edit, :destroy, :update]
   before_action :set_authority, only: [:show, :edit]
   before_action :move_to_index, only: [:edit, :destroy]

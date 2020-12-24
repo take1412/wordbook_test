@@ -88,41 +88,61 @@
 }
 
 .show-btn {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.show-btn li{
+  margin: 30px 0;
 }
 
 .authoritybtn {
   display: inline-block;
   padding: 20px;
-  margin-top: 20px;
-  border: 2px solid black;
+  margin: 0 20px;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
   text-decoration: none;
   background-color: #FF9900;
   color: white;
   font-weight: bold;
+}
 
+.authoritybtn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #FF9900;
 }
 
 .editbtn {
   display: inline-block;
   padding: 20px;
-  margin: 50px 0;
-  border: 2px solid black;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
   text-decoration: none;
-  background-color: rgb(56, 133, 40);
+  background-color: green;
   color: white;
   font-weight: bold;
+}
+
+.editbtn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid green;
 }
 
 .destroybtn {
   display: inline-block;
   padding: 20px;
-  margin: 50px 0;
-  border: 2px solid black;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
   text-decoration: none;
-  background-color: rgb(22, 21, 21);
+  background-color: black;
   color: white;
   font-weight: bold;
+}
+
+.destroybtn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid black;
 }
 
 .wordmemory {
@@ -160,12 +180,6 @@ a.btn--radius {
   border-radius: 100vh;
 }
 
-.fa-position-right {
-  position: absolute;
-  top: calc(50% - .5em);
-  right: 1rem;
-}
-
 .memory2 {
   line-height: 70px;
 }
@@ -180,21 +194,25 @@ a.btn--radius {
 }
 
 .word-regi {
-  text-align: center;
-  height: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .regi {
-  width: 50vw;
-  line-height: 70px;
+  display: inline;
   padding: 20px 50px;
   text-decoration: none;
-  border: 2px solid black;
-  background-color: rgb(37, 164, 202);
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
+  background-color: skyblue;
   color: white;
   font-weight: bold;
 }
 
+.regi:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid skyblue;
+}
 
 .far {
   position: relative;
@@ -236,7 +254,7 @@ a.btn--radius {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  background-color: #7fffff;
+  background-color: silver;
   color: black;
 }
 
@@ -252,7 +270,7 @@ a.btn--radius {
   display: flex;
   border-top: 5px double black;
   width: 100%;
-  background-color: #e0ffff;
+  background-color: #e8e8e8;
 }
 
 .wname{
@@ -294,24 +312,36 @@ a.btn--radius {
 
 .word-edit-btn {
   position: absolute;
-  left: -80px;
+  left: -160px;
   top: 5px;
-  border: 2px solid black;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
   text-decoration: none;
-  background-color: rgb(56, 133, 40);
+  background-color: green;
   color: white;
   font-weight: bold;
   padding: 10px 20px;
 }
 
+.word-edit-btn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid green;
+}
+
 .word-delete-btn {
   position: absolute;
-  right: -80px;
+  left: -80px;
   top: 5px;
-  border: 2px solid black;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
   text-decoration: none;
   background-color: black;
   color: white;
   font-weight: bold;
   padding: 10px 20px;
+}
+
+.word-delete-btn:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid black;
 }

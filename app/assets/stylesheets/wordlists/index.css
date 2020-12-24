@@ -17,6 +17,15 @@
   margin: 20px;
   background-color: white;
   outline: 5px solid tan;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.300), 0 2px 3px 0 rgba(0,0,0,.22);
+  transition: .3s;
+}
+
+.lists:hover {
+  opacity: 0.7;
+  filter: brightness(110%); 
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.600), 0 0 5px rgba(0,0,0,.1);
+  transform: translateY(-4px);
 }
 
 .listlink {
