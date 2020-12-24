@@ -1,6 +1,19 @@
 <% if current_user.id == @user.id %>
 <div class = "main">
-<h1><%= "#{@nickname}さんの投稿ページ" %></h1>
+<h1 class = "page-title">ーマイページー</h1>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th class="table_col1">ニックネーム</th>
+        <td class="table_col2"><%= @user.nickname %></td>
+      </tr>
+      <tr>
+        <th class="table_col1">ユーザーコード</th>
+        <td class="table_col2"><%= @user.user_code %></td>
+      </tr>
+
+    </tbody>
+  </table>
   <div class = "word-lists">
   <% if @wordlists.length != 0 %>
     <% @wordlists.each do |wordlist|%>
@@ -21,7 +34,7 @@
     </ul>
     <% end %>
     <% else  %>
-    <p>単語を登録しよう！</p>
+    <p class = "no-wordlist">単語を登録しよう！</p>
     <% end %>
   </div>
   <div class = "index-page">
@@ -32,30 +45,12 @@
 <% else %>
 
 <div class = "main">
-<h1><%= "#{@nickname}さんの投稿ページ" %></h1>
+<h1 class = "page-title"><%= "ー#{@nickname}さんの投稿ページー" %></h1>
   <div class = "word-lists">
   <% if Wordlist.where("release_id = 1").length != 0 %>
-    <% @wordlists.each do |wordlist|%>
-    <% if wordlist.release_id == 1 %>
-    <ul>
-      <li class = "lists">
-        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <p class = "ex">リストの名前：</p>
-          <div class = "list-name-content">
-            <%= wordlist.listname%>
-          </div>
-          <p  class = "ex">説明：</p>
-          <div class = "list-text-content">
-            <%= wordlist.text%>
-          </div>
-        <% end %>
-          <%= link_to "作成者: #{wordlist.user.nickname}", user_path(wordlist.user.id) , class: "create-list-user" %>
-      </li>
-    </ul>
-    <% end %>
-    <% end %>
+    <%= render "wordlists/main" %>
     <% else  %>
-    <p>単語がありません</p>
+    <p class = "no-wordlist">リストがありません</p>
     <% end %>
   </div>
   <div class = "index-page">

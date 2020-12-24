@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :user_code, uniqueness: true
+    validates :user_code, uniqueness: true, length: { maximum: 8 }
   end
 
   def self.user_search(search)

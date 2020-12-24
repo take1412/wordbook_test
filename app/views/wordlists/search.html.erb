@@ -3,27 +3,9 @@
   <div class = "main">
     <div class = "word-lists">
     <% if Wordlist.where("release_id = 1").length != 0 %>
-      <% @wordlists.each do |wordlist|%>
-      <% if wordlist.release_id == 1 %>
-    <ul>
-      <li class = "lists">
-        <%= link_to wordlist_path(wordlist.id), class: "listlink" do %>
-          <p class = "ex">リストの名前：</p>
-          <div class = "list-name-content">
-            <%= wordlist.listname%>
-          </div>
-          <p  class = "ex">説明：</p>
-          <div class = "list-text-content">
-            <%= simple_format (wordlist.text)%>
-          </div>
-        <% end %>
-          <%= link_to "作成者: #{wordlist.user.nickname}", user_path(wordlist.user.id) , class: "create-list-user" %>
-      </li>
-    </ul>
-      <% end %>
-      <% end %>
+      <%= render "main" %>
       <% else  %>
-      <p>単語を登録しよう！</p>
+      <p class = "no-wordlist">単語を登録しよう！</p>
       <% end %>
     </div>
     <div class = "index-page">
@@ -59,7 +41,7 @@
       <% end %>
       <% end %>
       <% else  %>
-      <p>単語を登録しよう！</p>
+      <p class = "no-wordlist">単語を登録しよう！</p>
       <% end %>
     </div>
     <div class = "index-page">

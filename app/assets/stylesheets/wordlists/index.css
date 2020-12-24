@@ -59,7 +59,11 @@
   
 }
 
-
+.no-wordlist {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}
 
 .index-page {
   text-align: center;

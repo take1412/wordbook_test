@@ -1,4 +1,5 @@
 <div class = "main">
+  <h1 class = "page-title">ーお気に入り一覧ー</h1>
 <div class = "word-lists">
   <% if @favorites.length != 0 %>
     <% @favorites.each do |favorite|%>
@@ -19,7 +20,7 @@
     </ul>
     <% end %>
   <% else %>
-    <p>お気に入りを登録しよう！</p>
+    <p class = "no-favorite">お気に入りを登録しよう！</p>
   <% end %>
   </div>
   <div class = "index-page">

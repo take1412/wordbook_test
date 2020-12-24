@@ -28,19 +28,18 @@ class WordlistsController < ApplicationController
 
   def search
     @model = params['search']['model']
-    if params[:keyword] == ""
+    if params[:keyword] == ''
       redirect_to root_path
     else
       @wordlists = if @model == 'list'
-                    Wordlist.search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
-                  else
-                    User.user_search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
-                  end
-      end
+                     Wordlist.search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                   else
+                     User.user_search(params[:keyword]).page(params[:page]).per(10).order('created_at DESC')
+                   end
+    end
   end
 
   def edit
- 
   end
 
   def destroy
@@ -73,11 +72,13 @@ class WordlistsController < ApplicationController
   def set_authority
     if user_signed_in?
       @authority = Authority.where("wordlist_id = #{@wordlist.id}")
-      @authority_user = @authority.find{|a| a[:authority_user_code] == current_user.user_code}
+      @authority_user = @authority.find { |a| a[:authority_user_code] == current_user.user_code }
     end
   end
 
   def move_to_index
-      redirect_to action: :index unless current_user.id == @wordlist.user.id || @authority_user != nil && @authority_user.authority_user_code == current_user.user_code
+    unless current_user.id == @wordlist.user.id || !@authority_user.nil? && @authority_user.authority_user_code == current_user.user_code
+      redirect_to action: :index
+    end
   end
 end

@@ -177,3 +177,9 @@ form select{
   bottom: 10px;
   height: 20px;
 }
+
+.no-favorite {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+}

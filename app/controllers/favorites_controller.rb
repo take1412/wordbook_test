@@ -9,19 +9,17 @@ class FavoritesController < ApplicationController
   def create
     favorite = Favorite.new(user_id: current_user.id, wordlist_id: params[:wordlist_id])
     favorite.save
-    
 
     # render json:{ wordlist: @wordlist }
 
     # respond_to do |format|
-    #   format.js {render :template => "wordlists/show",locals: { favorite: @favorite, wordlist: @wordlist} } 
+    #   format.js {render :template => "wordlists/show",locals: { favorite: @favorite, wordlist: @wordlist} }
     #   end
   end
 
   def destroy
     favorite = Favorite.find_by(user_id: current_user.id, wordlist_id: params[:wordlist_id])
     favorite.destroy
-
   end
 
   private

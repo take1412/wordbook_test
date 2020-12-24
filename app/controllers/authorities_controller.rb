@@ -15,15 +15,13 @@ class AuthoritiesController < ApplicationController
   end
 
   def destroy
-    
   end
 
-
   private
+
   def authority_params
     params.require(:authority).permit(:authority_user_code).merge(wordlist_id: params[:wordlist_id])
   end
-
 
   def set_wordlist
     @wordlist = Wordlist.find(params[:wordlist_id])

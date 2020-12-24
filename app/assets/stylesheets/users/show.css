@@ -1,0 +1,24 @@
+.page-title {
+  text-align: center;
+  background-color: #CCCCCC;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.table {
+  margin: 20px;
+  outline: 3px solid black;
+  font-size: 20px;
+}
+
+.table_col1 {
+  padding: 10px;
+  outline: 1px solid black;
+}
+
+.table_col2 {
+  outline: 1px solid black;
+  padding: 10px;
+
+}

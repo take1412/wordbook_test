@@ -10,7 +10,7 @@ class Wordlist < ApplicationRecord
   with_options presence: true do
     validates :listname
     validates :text
-    validates :release_id, numericality: { other_than: 0 , message: "どちらか設定してください"}
+    validates :release_id, numericality: { other_than: 0, message: 'どちらか設定してください' }
   end
 
   def self.search(search)
@@ -24,5 +24,4 @@ class Wordlist < ApplicationRecord
   def favorite_by?(user)
     Favorite.where(user_id: user.id).exists?
   end
-
 end

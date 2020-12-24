@@ -6,5 +6,4 @@ class Word < ApplicationRecord
     validates :wordname
     validates :mean
   end
-
 end
