@@ -49,6 +49,9 @@
   backface-visibility: hidden;
 }
 
+.word-show-name:hover {
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.600), 0 0 5px rgba(0,0,0,.1);
+}
 
 .word-show-mean {
   position: absolute;
@@ -72,4 +75,27 @@
   backface-visibility: hidden;
 }
 
+.word-show-mean:hover {
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.600), 0 0 5px rgba(0,0,0,.1);
+}
+
+.back-list {
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  height: 50px;
+  width: 150px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  background-color: skyblue;
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
+}
+
+.back-list:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid tan;
+}
 

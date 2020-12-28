@@ -66,6 +66,9 @@
     <div class = "main-content">
       <%= yield %>
     </div>
+    <div class = "fotnav">
+        <%= link_to "トップページに戻る", "/" , class: "top-page"%>
+    </div>
     <footer class = "footer">
         <% if user_signed_in? %>
           <%= link_to new_wordlist_path, class: "new-list-btn" do %>
@@ -74,7 +77,7 @@
           </i>
           <% end %>
         <% end %>
-      <p　class = "footer-text">copyright ©️ WordList</p>
+      <p class = "footer-text">copyright ©️ WordList</p>
     </footer>
   </body>
 </html>
