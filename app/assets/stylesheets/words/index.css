@@ -22,12 +22,10 @@
   height: 100px;
   cursor: pointer;
   transform-style: preserve-3d;
-  z-index: auto;
 }
 
 .word-memory.active{
   transform: rotateY(180deg);
-
 }
 
 .word-show-name {
@@ -48,6 +46,7 @@
   word-break: break-all;
   background-color: white;
   backface-visibility: hidden;
+  z-index: 1px;
 }
 
 .word-show-name:hover {
@@ -74,6 +73,7 @@
   background-color: white;
   color: red;
   backface-visibility: hidden;
+  z-index: 1px;
 }
 
 .word-show-mean:hover {
