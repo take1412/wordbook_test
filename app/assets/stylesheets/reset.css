@@ -12,6 +12,7 @@ html{
   margin: 0;
   color:#000;
   background:#FFF;
+  -webkit-appearance: none;
 }
 /*
   TODO remove settings on BODY since we can't namespace it.
