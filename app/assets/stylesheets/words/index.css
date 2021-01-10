@@ -49,9 +49,9 @@
   backface-visibility: hidden;
 }
 
-.word-show-name:hover {
+/* .word-show-name:hover {
   box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.600), 0 0 5px rgba(0,0,0,.1);
-}
+} */
 
 .word-show-mean {
   position: absolute;
@@ -74,10 +74,10 @@
   color: red;
   backface-visibility: hidden;
 }
-
+/* 
 .word-show-mean:hover {
   box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.600), 0 0 5px rgba(0,0,0,.1);
-}
+} */
 
 .back-list {
   display: inline-block;
