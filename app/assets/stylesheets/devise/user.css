@@ -151,3 +151,19 @@
   color: #d65f4c;
   font-size: 14px;
 }
+
+@media (max-width: 1024px) {
+  .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
+    float: none;
+  }
+
+.account-page .account-page__header .back-page {
+  box-shadow: none;
+  transform: none;
+}
+
+  .account-page input[type=submit] {
+    transform: none;
+    box-shadow: none;
+  }
+}

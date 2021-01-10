@@ -307,6 +307,7 @@
 
 .word-edit-btn {
   position: absolute;
+  width: 32px;
   right: -80px;
   top: 5px;
   border-radius: 100vh;
@@ -325,6 +326,7 @@
 
 .word-delete-btn {
   position: absolute;
+  width: 32px;
   right: -160px;
   top: 5px;
   border-radius: 100vh;
@@ -341,3 +343,20 @@
   border-bottom: 2px solid black;
 }
 
+@media (max-width: 1024px) {
+  .showwrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.word-edit-btn {
+  left: -80px;
+  top: 5px;
+}
+
+.word-delete-btn {
+  right: -80px;
+  top: 5px;
+}
+}
+}

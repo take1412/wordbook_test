@@ -148,7 +148,7 @@ form select{
 .main-content {
   grid-area: main;
   background-image: url("images/43455.png");
-  background-size: 100%;
+  background-size: 100vw;
   background-position: center;
 }
 
@@ -195,7 +195,6 @@ form select{
 
 .fa-plus {
   position: relative;
-
   width: 150px;
   height: 80px;
   color: white;
@@ -217,6 +216,9 @@ form select{
 
 
 @media (max-width: 1024px) {
+  body {
+    font-weight: bold;
+  }
   .word-png {
     display: none;
   }
@@ -225,13 +227,25 @@ form select{
     float: left;
   }
 
+  form select{
+    width: 130px;
+    height: 30px;
+    font-size: 25px;
+
+  }
+  
   .search-input {
-    width: 200px;
+    width: 250px;
+    height: 30px;
+    font-size: 25px;
+
+  }
+  
+  .search-btn {
+    font-size: 25px;
   }
 
-  .fas {
-    
-  }
+
 
   .fa-plus {
   }
