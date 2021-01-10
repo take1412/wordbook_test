@@ -218,7 +218,11 @@ form select{
 
 @media (max-width: 1024px) {
   .word-png {
-    width: 200px;
+    display: none;
+  }
+
+  .search-form {
+    float: left;
   }
 
   .search-input {
@@ -226,15 +230,17 @@ form select{
   }
 
   .fas {
-    width: 70px;
+    
   }
 
   .fa-plus {
-    width: 150px;
   }
 
   .header-btn p{
-    font-size: 13px;
-    width: 70px;
+
+  }
+
+  .word-show-mean {
+    backface-visibility: none;
   }
 }
