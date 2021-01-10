@@ -22,7 +22,6 @@
   height: 100px;
   cursor: pointer;
   transform-style: preserve-3d;
-  transform: translate3d(0,0,0);
 }
 
 .word-memory.active{
@@ -47,6 +46,8 @@
   word-break: break-all;
   background-color: white;
   backface-visibility: hidden;
+  transform: translate3d(0,0,0);
+
 }
 
 .word-show-name:hover {
