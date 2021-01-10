@@ -73,7 +73,7 @@
   background-color: white;
   color: red;
   backface-visibility: hidden;
-  z-index: 1px;
+  z-index: 2px;
 }
 
 .word-show-mean:hover {
