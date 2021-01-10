@@ -46,8 +46,7 @@
   word-break: break-all;
   background-color: white;
   backface-visibility: hidden;
-  transform: translate3d(0,0,0);
-
+  -webkit-backface-visibility: hidden;
 }
 
 .word-show-name:hover {
@@ -74,6 +73,7 @@
   background-color: white;
   color: red;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .word-show-mean:hover {
