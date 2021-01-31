@@ -63,9 +63,5 @@ gem "pry-rails"
 gem "rails-i18n"
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-
-group :production do
-  gem 'unicorn', '5.4.1'
-end
-
+gem 'unicorn'
 gem 'dotenv-rails'
