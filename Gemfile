@@ -65,3 +65,6 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'unicorn'
 gem 'dotenv-rails'
+group :production, :staging do
+    gem 'unicorn'
+end
