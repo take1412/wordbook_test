@@ -54,6 +54,7 @@
     ![08c1803ddcbf64f71284e89aa1d05f0d](https://user-images.githubusercontent.com/73679908/106480980-4d31c200-64ef-11eb-8d9d-0635927a0168.jpg)
 
   ・単語表示・単語ランダム表示機能
+  https://gyazo.com/ffe0718ce026e569b8dbaf308a556dc9
     <img src= "https://user-images.githubusercontent.com/73679908/106485333-d4813480-64f3-11eb-8d6b-071171114512.mp4">
 
 
