@@ -54,7 +54,7 @@
     ![08c1803ddcbf64f71284e89aa1d05f0d](https://user-images.githubusercontent.com/73679908/106480980-4d31c200-64ef-11eb-8d9d-0635927a0168.jpg)
 
   ・単語表示・単語ランダム表示機能
-    ![result](https://user-images.githubusercontent.com/73679908/106488746-5e7ecc80-64f7-11eb-91ca-d20912021ebd.gif)
+    ![result](https://user-images.githubusercontent.com/73679908/106491693-77d54800-64fa-11eb-954b-e109da16e54c.gif)
 
 
 
