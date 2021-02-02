@@ -1,0 +1,18 @@
+<div class = "new-lists">
+
+  <%= form_with(model: [@wordlist, @word], local: true) do |form| %>
+    <%# エラー発生時のメッセージ表示%>
+    <%= render 'wordlists/error_messages', model: form.object %>
+    <%# //エラー発生時のメッセージ表示%>
+
+    <div class = "lists-name">
+      <%= form.text_field :wordname, placeholder: "単語の名前", class: "listname" %>
+    </div>
+    <div class = "lists-text">
+      <%= form.text_area :mean, placeholder: "単語の意味", rows: "2", class: "listtext" %>
+    </div>
+    <div class = "lists-btn">
+      <%= form.submit "単語登録" %>
+    </div>
+  <% end %>
+</div>
