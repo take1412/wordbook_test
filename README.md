@@ -83,8 +83,6 @@
 -    Rails 6.0.0
 -    MySQL2
 -    AWS(EC2, VPC)
--    Docker
--    Docker-compose
 -    RSpec  
 
   # 今後実装したい事
