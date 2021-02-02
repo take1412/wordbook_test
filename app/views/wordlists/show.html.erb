@@ -27,7 +27,7 @@
         <p class = "show-ex ex-user">共有ユーザー</p>
         <p class = "show-authority">
         <% @authority.each do |authority| %>
-          <% link_to edit_wordlist_authority_path(@wordlist.id, authority.id) do %>
+          <%= link_to edit_wordlist_authority_path(@wordlist.id, authority.id), class: "authority_user" do %>
             <%= authority.authority_user_code %>
           <% end %>
         <% end %>
