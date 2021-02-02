@@ -1,0 +1,19 @@
+.authority-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.authority-delete {
+  border-radius: 100vh;
+  border-bottom: 5px solid gray;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.authority-delete:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid black;
+}

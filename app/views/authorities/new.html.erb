@@ -1,15 +1,1 @@
-<div class = "new-lists">
-
-  <%= form_with(model: [@wordlist, @authority], local: true) do |form| %>
-    <%# エラー発生時のメッセージ表示%>
-    <%= render 'wordlists/error_messages', model: form.object %>
-    <%# //エラー発生時のメッセージ表示%>
-
-    <div class = "lists-name">
-      <%= form.text_field :authority_user_code, placeholder: "ユーザーコード", class: "listname" %>
-    </div>
-    <div class = "lists-btn">
-      <%= form.submit "設定" %>
-    </div>
-  <% end %>
-</div>
+<%= render "form-authority"%>
