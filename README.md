@@ -1,7 +1,7 @@
 # アプリ名
   **Wordbook**(サイトタイトルはwordlist)  
 
-  http://54.248.165.197/  
+  http://18.179.160.253/  
 
   ![e4c724e3c36f329958c6b1b970c26d42](https://user-images.githubusercontent.com/73679908/106473781-8d8d4200-64e7-11eb-9229-d56882e08acc.jpg)  
 
