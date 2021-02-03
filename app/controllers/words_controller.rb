@@ -1,7 +1,8 @@
 class WordsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
   before_action :set_wordlist, only: [:index, :create, :edit, :destroy, :update, :rand, :new]
   before_action :set_word, only: [:edit, :update, :destroy]
+  before_action :set_authority, only: [:edit]
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
@@ -59,7 +60,16 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
   end
 
+  def set_authority
+    if user_signed_in?
+      @authority = Authority.where("wordlist_id = #{@wordlist.id}")
+      @authority_user = @authority.find { |a| a[:authority_user_code] == current_user.user_code }
+    end
+  end
+
   def move_to_index
-    redirect_to wordlist_path(@wordlist.id) unless current_user.id == @wordlist.user.id
+    unless current_user.id == @wordlist.user.id || !@authority_user.nil? && @authority_user.authority_user_code == current_user.user_code
+      redirect_to wordlist_path(@wordlist.id)
+    end
   end
 end
