@@ -16,25 +16,25 @@ RSpec.describe Wordlist, type: :model do
       it 'リストの名前が空だと登録できない' do
         @wordlist.listname = nil
         @wordlist.valid?
-        expect(@wordlist.errors.full_messages).to include("リストの名前を入力してください")
+        expect(@wordlist.errors.full_messages).to include('リストの名前を入力してください')
       end
 
       it '説明文が空だと登録できない' do
         @wordlist.text = nil
         @wordlist.valid?
-        expect(@wordlist.errors.full_messages).to include("説明文を入力してください")
+        expect(@wordlist.errors.full_messages).to include('説明文を入力してください')
       end
 
       it '公開・非公開どちらか設定していないと登録できない' do
         @wordlist.release_id = 0
         @wordlist.valid?
-        expect(@wordlist.errors.full_messages).to include("公開・非公開どちらか設定してください")
+        expect(@wordlist.errors.full_messages).to include('公開・非公開どちらか設定してください')
       end
 
       it 'userが紐付いていないと登録できない' do
         @wordlist.user = nil
         @wordlist.valid?
-        expect(@wordlist.errors.full_messages).to include("Userを入力してください")
+        expect(@wordlist.errors.full_messages).to include('Userを入力してください')
       end
     end
   end

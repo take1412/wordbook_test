@@ -16,31 +16,31 @@ RSpec.describe User, type: :model do
       it 'ニックネームが空だと登録できない' do
         @user.nickname = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
       it 'ニックネームが10文字以上だと登録できない' do
-        @user.nickname = "12345678912"
+        @user.nickname = '12345678912'
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームは10文字以内で入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームは10文字以内で入力してください')
       end
 
       it 'ユーザーコードが空だと登録できない' do
         @user.user_code = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("ユーザーコードを入力してください")
+        expect(@user.errors.full_messages).to include('ユーザーコードを入力してください')
       end
 
       it 'ユーザーコードが8文字以上だと登録できない' do
         @user.user_code = '123456789'
         @user.valid?
-        expect(@user.errors.full_messages).to include("ユーザーコードは8文字以内で入力してください")
+        expect(@user.errors.full_messages).to include('ユーザーコードは8文字以内で入力してください')
       end
 
       it 'ユーザーコードが8文字以上だと登録できない' do
         @user.user_code = '123456789'
         @user.valid?
-        expect(@user.errors.full_messages).to include("ユーザーコードは8文字以内で入力してください")
+        expect(@user.errors.full_messages).to include('ユーザーコードは8文字以内で入力してください')
       end
 
       it '重複しているユーザーコードが存在していたら登録できない' do
@@ -48,13 +48,13 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.user_code = @user.user_code
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("ユーザーコードはすでに存在します")
+        expect(another_user.errors.full_messages).to include('ユーザーコードはすでに存在します')
       end
 
       it 'メールアドレスが空では登録できない' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレスを入力してください")
+        expect(@user.errors.full_messages).to include('メールアドレスを入力してください')
       end
 
       it 'メールアドレスに@がないと登録できない' do
@@ -74,7 +74,7 @@ RSpec.describe User, type: :model do
       it 'パスワードが空では登録できない' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
 
       it 'パスワードが5文字以下であれば登録できない' do
@@ -94,9 +94,8 @@ RSpec.describe User, type: :model do
       it 'パスワードと確認用パスワードが一致していないと登録できない。' do
         @user.password_confirmation = 'a12345'
         @user.valid?
-        expect(@user.errors.full_messages).to include("確認用パスワードとパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('確認用パスワードとパスワードの入力が一致しません')
       end
     end
   end
 end
-

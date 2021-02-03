@@ -16,13 +16,13 @@ RSpec.describe Authority, type: :model do
       it 'ユーザーコードが空だと登録できない' do
         @authority.authority_user_code = nil
         @authority.valid?
-        expect(@authority.errors.full_messages).to include("ユーザーコードを入力してください")
+        expect(@authority.errors.full_messages).to include('ユーザーコードを入力してください')
       end
 
       it 'ユーザーコードが9文字以上だと登録できない' do
         @authority.authority_user_code = '123456789'
         @authority.valid?
-        expect(@authority.errors.full_messages).to include("ユーザーコードは8文字以内で入力してください")
+        expect(@authority.errors.full_messages).to include('ユーザーコードは8文字以内で入力してください')
       end
 
       it '同じリストに重複しているユーザーコードが存在していたら登録できない' do
@@ -31,7 +31,7 @@ RSpec.describe Authority, type: :model do
         another_authority.authority_user_code = @authority.authority_user_code
         another_authority.wordlist_id = @authority.wordlist_id
         another_authority.valid?
-        expect(another_authority.errors.full_messages).to include("ユーザーコードはすでに存在します")
+        expect(another_authority.errors.full_messages).to include('ユーザーコードはすでに存在します')
       end
     end
   end
