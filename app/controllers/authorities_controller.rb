@@ -48,6 +48,6 @@ class AuthoritiesController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless current_user.id == @wordlist.user.id
+    redirect_to wordlist_path(@wordlist.id) unless current_user.id == @wordlist.user.id
   end
 end
