@@ -63,5 +63,16 @@ gem "pry-rails"
 gem "rails-i18n"
 gem 'jquery-rails'
 gem 'font-awesome-sass'
-gem 'unicorn', '5.4.1'
+gem 'unicorn'
 gem 'dotenv-rails'
+group :production, :staging do
+    gem 'unicorn'
+end
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
